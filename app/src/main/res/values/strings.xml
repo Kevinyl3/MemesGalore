@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mockProject2</string>
+    <string name="app_name">Memes Galore</string>
     <string name="button_name">Generate Meme</string>
-    <string name="caption">Caption Here</string>
+    <string name="caption_name">Caption This</string>
 </resources>

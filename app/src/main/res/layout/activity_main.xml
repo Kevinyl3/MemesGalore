@@ -8,20 +8,24 @@
 
     <Button
         android:id="@+id/randomize"
-        android:layout_width="match_parent"
+        style="@style/Widget.AppCompat.Button"
 
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/button_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935"
-        tools:text="@string/button_name" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <TextView
         android:id="@+id/instructions"
@@ -41,8 +45,8 @@
 
     <ImageView
         android:id="@+id/displayedImage"
-        android:layout_width="253dp"
-        android:layout_height="307dp"
+        android:layout_width="357dp"
+        android:layout_height="421dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -58,7 +62,7 @@
         app:srcCompat="@drawable/pat" />
 
     <TextView
-        android:id="@+id/Caption"
+        android:id="@+id/caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,14 +71,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/caption"
-        android:textSize="28sp"
+        android:text="@string/caption_name"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588"
-        tools:text="@string/caption" />
+        app:layout_constraintVertical_bias="0.592" />
 
 </android.support.constraint.ConstraintLayout>
