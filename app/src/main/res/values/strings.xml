@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">mockProject2</string>
+    <string name="button_name">Generate Meme</string>
+    <string name="caption">Caption Here</string>
 </resources>
