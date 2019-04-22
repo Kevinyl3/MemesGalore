@@ -6,8 +6,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Random;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SensorEventListener{
+    protected Sensor sensor;
+    protected SensorManager SM;
     //the arrays for the images and text strings to be displayed, images and text still need to be added.
     int[] memeImages = {
             R.drawable.angry,
@@ -50,9 +56,34 @@ public class MainActivity extends AppCompatActivity {
     int lastImage = 0;
     int pickedText = 0;
     int lastText = 0;
+    protected boolean tilted = false;
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.values[2] > 8 && !tilted) {
+            //randomImage called
+            tilted = true;
+        }
+        if (event.values[2] < -8 && !tilted) {
+            //random text is called
+            tilted = true;
+        }
+        if (event.values[1] > 9 && tilted) {
+            tilted = false;
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+//Not used
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Setting up our sensor manager and Senor object
+        SM =  (SensorManager) getSystemService(SENSOR_SERVICE);
+        sensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        SM.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //initializing the caption view, image view, button and instruction view.
