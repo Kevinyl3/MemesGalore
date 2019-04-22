@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         //Backward tilt
-        if (event.values[2] > 9 && !tilted) {
+        if (event.values[2] > 8.5 && !tilted) {
             displayedImage.setImageResource(memeImages[randImage()]);
             caption.setText(captions[randText()]);
             tilted = true;
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             tilted = true;
         }
         //Reset Vertical
-        if (event.values[1] > 9.5 && tilted) {
+        if (event.values[1] > 6 && tilted) {
             tilted = false;
         }
     }
