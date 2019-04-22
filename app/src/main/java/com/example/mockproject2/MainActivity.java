@@ -12,6 +12,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
+    ImageView displayedImage;
+    TextView instructions;
+    TextView caption;
+    Button randomize;
     protected Sensor sensor;
     protected SensorManager SM;
     //the arrays for the images and text strings to be displayed, images and text still need to be added.
@@ -46,10 +50,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     String[] captions = {
             "When the midterm has 4 programing problems instead of 3",
             "When Geoff walks into office hours",
+            
     };
     //Directions and details.
     final String directions = "Tilt device backwards to randomize image or tilt device forwards to randomize caption.";
-    final String noGyroscope = "We couldn't connect to your gyroscope, please use the 'RANDOMIZE' button to generate memes";
+    //final String noGyroscope = "We couldn't connect to your gyroscope, please use the 'RANDOMIZE' button to generate memes";
     Random random = new Random();
     //The current and last picked image and text.
     int pickedImage = 0;
@@ -60,11 +65,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.values[2] > 8 && !tilted) {
-            //randomImage called
+            displayedImage.setImageResource(memeImages[randImage()]);
             tilted = true;
         }
         if (event.values[2] < -8 && !tilted) {
-            //random text is called
+            caption.setText(captions[randText()]);
             tilted = true;
         }
         if (event.values[1] > 9 && tilted) {
@@ -74,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-//Not used
     }
 
     @Override
@@ -87,31 +91,37 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //initializing the caption view, image view, button and instruction view.
-        final ImageView displayedImage = findViewById(R.id.displayedImage);
-        final TextView instructions = findViewById(R.id.instructions);
-        final TextView caption = findViewById(R.id.caption);
-        final Button randomize = findViewById(R.id.randomize);
+        displayedImage = findViewById(R.id.displayedImage);
+        instructions = findViewById(R.id.instructions);
+        caption = findViewById(R.id.caption);
+        randomize = findViewById(R.id.randomize);
         //making the button randomize image and caption
         randomize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //remove duplicate images.
-                do {
-                    pickedImage = random.nextInt(memeImages.length);
-                } while (pickedImage == lastImage);
-                lastImage = pickedImage;
-                //display random image.
-                displayedImage.setImageResource(memeImages[pickedImage]);
-                //remove duplicate text.
-                do {
-                    pickedText = random.nextInt(captions.length);
-                } while (pickedText == lastText);
-                lastText = pickedText;
-                //display random text
-                caption.setText(captions[pickedText]);
+                displayedImage.setImageResource(memeImages[randImage()]);
+                caption.setText(captions[randText()]);
             }
         });
         //after we put in the library/API for the gyroscope, we put that code here.
         instructions.setText(directions);
+    }
+    private int randImage() {
+        //remove duplicate images.
+        do {
+            pickedImage = random.nextInt(memeImages.length);
+        } while (pickedImage == lastImage);
+        lastImage = pickedImage;
+        //display random image.
+        //remove duplicate text.
+        return pickedImage;
+    }
+    private int randText() {
+        do {
+            pickedText = random.nextInt(captions.length);
+        } while (pickedText == lastText);
+        lastText = pickedText;
+        //display random text
+        return pickedText;
     }
 }
