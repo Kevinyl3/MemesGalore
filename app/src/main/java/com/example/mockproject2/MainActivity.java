@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     String[] captions = {
             "When the midterm has 4 programing problems instead of 3",
             "When Geoff walks into office hours",
-            
+
     };
     //Directions and details.
     final String directions = "Tilt device backwards to randomize image or tilt device forwards to randomize caption.";
