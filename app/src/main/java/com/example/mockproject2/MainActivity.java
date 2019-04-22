@@ -79,8 +79,22 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             "When you're not a defensive programmer",
             "!isTrue vs isTrue == false",
             "Posting code on the forum",
-
-
+            "When you tell your friend the MP was easy",
+            "farthestNorth",
+            "When you call rotateRight 3 times to pass rotateLeft",
+            "When the CAs try to understand your code",
+            "When you try to explain your code",
+            "When you see the next group waiting to take the Quiz",
+            "NullPointerException",
+            "My counting my drops",
+            "Step 1: Do homework at 11, Step 2: Profit",
+            "When all your code is in one conditional",
+            "When you're 6 layers deep in for loops",
+            "When Ben Nordick doesn't know the answer",
+            "When Geoff replies 'No'",
+            "Checkstyle:",
+            "l o o p",
+            "When you read the programming questions after not paying attention to lecture",
     };
     //Directions and details.
     final String directions = "Tilt device backwards to randomize image or tilt device forwards to randomize caption.";
