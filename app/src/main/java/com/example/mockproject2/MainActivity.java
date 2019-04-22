@@ -47,9 +47,39 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.thonk,
             R.drawable.tom,
             R.drawable.celebsitting};
+    //thanos memes
     String[] captions = {
             "When the midterm has 4 programing problems instead of 3",
             "When Geoff walks into office hours",
+            "When the curly brace doesnt have a friend ;{",
+            "When you commit 5 mins before the deadline and it's still grading",
+            "When you finish the hw during lecture",
+            "PrairieLearn when you miss a semicolon",
+            "When you go into the weekly quiz without doing the practice questions",
+            "When people are already talking about the app but you haven't cloned",
+            "When it asks you to format a String",
+            "Expected 0 but found 1",
+            "'Failed on a one-carbon molecule'",
+            "When you realize your cbtf quiz is yesterday",
+            "MPs : 5 hours, 5 points",
+            "Reworking the test suites so you pass",
+            "When you test library again without changing anything",
+            "When you code on a chromebook",
+            "When you present your garbage code",
+            "When you look back at MP 0",
+            "When it asks you to RotateRight",
+            "When you see the words Recursion",
+            "For-loop OutOfBoundsException",
+            "Trying to figure out ifGameIsStarted",
+            "Trying to find the pivot point the 2d array",
+            "When you get the hw on your first try",
+            "When you finish the app section without the CAs",
+            "Adding the missing comment on the MP",
+            "Coding with no javadoc comments",
+            "When you're not a defensive programmer",
+            "!isTrue vs isTrue == false",
+            "Posting code on the forum",
+
 
     };
     //Directions and details.
@@ -64,15 +94,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected boolean tilted = false;
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.values[2] > 8 && !tilted) {
+        //Backward tilt
+        if (event.values[2] > 9 && !tilted) {
             displayedImage.setImageResource(memeImages[randImage()]);
-            tilted = true;
-        }
-        if (event.values[2] < -8 && !tilted) {
             caption.setText(captions[randText()]);
             tilted = true;
         }
-        if (event.values[1] > 9 && tilted) {
+        //Forward tilt
+        if (event.values[2] < -9 && !tilted) {
+            tilted = true;
+        }
+        //Reset Vertical
+        if (event.values[1] > 9.5 && tilted) {
             tilted = false;
         }
     }
