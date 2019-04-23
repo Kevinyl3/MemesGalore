@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.kermitkeyboard,
             R.drawable.kermitlaptop,
             R.drawable.kermitmeme,
-            R.drawable.pEq5Ohz,
+            R.drawable.thanos,
             R.drawable.rewindtime,
             R.drawable.wellyes,
             R.drawable.birdcage,
