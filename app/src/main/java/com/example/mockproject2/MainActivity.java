@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.angry,
             R.drawable.balanced,
             R.drawable.barelysqueezing,
+            R.drawable.catcrying,
+            R.drawable.doll,
+            R.drawable.eyesopen,
+            R.drawable.duckfacejpg,
             R.drawable.confusedface,
             R.drawable.conspiracy,
             R.drawable.evilkermit,
@@ -39,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.blurpat,
             R.drawable.celebsitting,
             R.drawable.fixinggradle,
-            R.drawable.food,
             R.drawable.girlthinking,
             R.drawable.hacker3,
             R.drawable.hak,
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             "Adding the missing comment on the MP",
             "Coding with no javadoc comments",
             "When you're not a defensive programmer",
-            "!isTrue vs isTrue == false",
+            "When you optimize by using !isTrue vs isTrue == false",
             "Posting code on the forum",
             "When you tell your friend the MP was easy",
             "Two days in trying to complete farthestNorth",
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             "When you read the programming questions after not paying attention to lecture",
     };
     //Directions and details.
-    final String directions = "Tilt device backwards to randomize image or tilt device forwards to randomize caption.";
+    final String directions = "Tilt device forwards to randomize image and caption. Or tilt device forwards to download.";
     //final String noGyroscope = "We couldn't connect to your gyroscope, please use the 'RANDOMIZE' button to generate memes";
     Random random = new Random();
     //The current and last picked image and text.
