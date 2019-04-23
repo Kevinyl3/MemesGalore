@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             "When you try to explain your code",
             "When you see the next group waiting to take the Quiz",
             "NullPointerException",
-            "Me counting my drops",
+            "Me, counting my drops",
             "Step 1: Do homework at 11, Step 2: Profit",
             "When all your code is in one conditional",
             "When you're 6 layers deep in for loops",
