@@ -115,7 +115,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             "When you use Collections methods on Lists",
             "Checkstyle:",
             "l o o p",
+            "When it's 10:01 and the music hasn't stopped",
             "When you read the programming questions after not paying attention to lecture",
+    };
+    String[] geoffText = {
+            "When Geoff releases the new MP",
+            "Geoff fixing his code in lecture",
+            "When Geoff can't fix the error",
+            "When Geoff walks into office hours",
+            "When Geoff hears the word copy",
+            "When Geoff cancels his office hours",
+            "When Geoff cancels lecture",
+            "Geoff after the class drop deadline",
+            "Geoff choosing his academic integrity meme",
     };
     //Directions and details.
     final String directions = "Tilt device forwards to randomize image and caption. Or tilt device forwards to download.";
@@ -142,6 +154,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         //Reset Vertical
         if (event.values[1] > 6 && tilted) {
             tilted = false;
+        }
+        if (event.values[0] > 8 && !tilted) {
+            displayedImage.setImageResource(memeImages[randImage()]);
         }
     }
 
