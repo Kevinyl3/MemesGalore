@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             "Geoff choosing his academic integrity meme",
     };
     //Directions and details.
-    final String directions = "Tilt device forwards to randomize image and caption. Or tilt device forwards to download.";
+    final String directions = "Tilt device forwards to randomize image and caption. Try tilting other directions!";
     //final String noGyroscope = "We couldn't connect to your gyroscope, please use the 'RANDOMIZE' button to generate memes";
     Random random = new Random();
     //The current and last picked image and text.
@@ -157,6 +157,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
         if (event.values[0] > 8 && !tilted) {
             displayedImage.setImageResource(memeImages[randImage()]);
+            caption.setText(geoffText[randGeoff()]);
+            tilted = true;
         }
     }
 
@@ -188,6 +190,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
         //after we put in the library/API for the gyroscope, we put that code here.
         instructions.setText(directions);
+    }
+    private int randGeoff() {
+        do {
+            pickedText = random.nextInt(geoffText.length);
+        } while (pickedText == lastText);
+        lastText = pickedText;
+        //display random text
+        return pickedText;
     }
     private int randImage() {
         //remove duplicate images.
