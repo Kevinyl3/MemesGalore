@@ -30,6 +30,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.confusedface,
             R.drawable.conspiracy,
             R.drawable.evilkermit,
+            R.drawable.confusedgirl,
+            R.drawable.done,
+            R.drawable.johny,
+            R.drawable.kemitdancing,
+            R.drawable.spongethinking,
+            R.drawable.whatu,
+            R.drawable.ytho,
             R.drawable.imindanger,
             R.drawable.jontron,
             R.drawable.kermitkeyboard,
@@ -63,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.thonk,
             R.drawable.tom,
             R.drawable.celebsitting};
-    //thanos memes
     String[] captions = {
             "When the midterm has 4 programing problems instead of 3",
             "When Geoff walks into office hours",
