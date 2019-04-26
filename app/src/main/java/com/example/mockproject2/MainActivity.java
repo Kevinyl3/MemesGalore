@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             R.drawable.barelysqueezing,
             R.drawable.catcrying,
             R.drawable.doll,
+            R.drawable.lisacrying,
             R.drawable.eyesopen,
             R.drawable.duckfacejpg,
             R.drawable.confusedface,
